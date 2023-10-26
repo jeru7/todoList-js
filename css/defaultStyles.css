@@ -103,7 +103,28 @@ footer {
   margin: 0.375rem 0;
 }
 
+/* list container */
 .list-container {
   height: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 12px;
+  background-color: var(--secondary-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.list-header {
+  height: 20%;
+  margin-bottom: 4px;
+  background-color: #dfcf8e;
+}
+
+.list-main {
+}
+
+.todos-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
