@@ -105,11 +105,6 @@ footer {
 }
 
 /* list container */
-.list-button {
-  border: none;
-  cursor: pointer;
-}
-
 .list-container {
   height: 100%;
   display: flex;
