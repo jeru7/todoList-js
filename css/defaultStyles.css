@@ -46,6 +46,7 @@ nav {
 .nav-container .settings-toggler {
   height: 100%;
   width: 60px;
+  border: 1px solid rgb(72, 71, 71);
 }
 
 .nav-container a {
@@ -104,6 +105,11 @@ footer {
 }
 
 /* list container */
+.list-button {
+  border: none;
+  cursor: pointer;
+}
+
 .list-container {
   height: 100%;
   display: flex;
@@ -114,17 +120,35 @@ footer {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.list-container > div:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.list-container > div:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
 .list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 20%;
+  text-align: left;
+  padding: 0.375rem;
   margin-bottom: 4px;
   background-color: #dfcf8e;
 }
 
 .list-main {
+  height: 100%;
 }
 
 .todos-container {
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
+}
+
+.todos-container li {
+  list-style: none;
 }
