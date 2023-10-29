@@ -11,7 +11,7 @@
     <!-- nav container -->
     <nav class="nav-container">
       <h2 class="logo-container"><a href="#">ToDoList</a></h2>
-      <div class="settings-toggler"></div>
+      <div class="menu-button"></div>
     </nav>
 
     <!-- add/delete list container -->
@@ -24,13 +24,19 @@
     <div class="main-container">
       <div class="list-container">
         <div class="list-header">
-          <h3 class="title">Books to read</h3>
-          <div class="list-settings">x</div>
+          <h3 class="title" contenteditable="false">Books to read</h3>
+          <div class="header-settings-container">
+            <div class="add-todoList"></div>
+            <div class="list-settings"></div>
+          </div>
         </div>
         <div class="list-main">
           <div class="todos-container">
-            <li class="todos">list 1</li>
-            <input type="checkbox" class="" />
+            <li class="todos" contenteditable="false">list 1</li>
+            <div class="checkDelete-container">
+              <div class="checkBox"></div>
+              <div class="list-delete"></div>
+            </div>
           </div>
         </div>
       </div>
