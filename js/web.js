@@ -77,19 +77,6 @@ document.addEventListener("click", (event) => {
   }
 });
 
-const listTitle = document.querySelector(".title");
-let isEditable = true;
-
-// function to limit the character of the title
-listTitle.addEventListener("input", (event) => {
-  const maxChar = 13;
-
-  if (listTitle.innerText.length > maxChar) {
-    event.target.innerText = event.target.innerText.slice(0, maxChar);
-    alert(`There's only maximum of ${maxChar} characters for the title`);
-  }
-});
-
 // event delegation for editing lists and title
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("list-settings")) {
@@ -101,12 +88,22 @@ document.addEventListener("click", (event) => {
       .closest(".list-container")
       .querySelector(".title");
 
-    let isEditable = !listTitle.isContentEditable;
+    let isEditable = !listTitle.isEditable;
 
     listTitle.setAttribute("contenteditable", isEditable);
 
     todoList.forEach((todo) => {
       todo.setAttribute("contenteditable", isEditable);
+    });
+
+    // function to limit the character of the title
+    listTitle.addEventListener("input", (event) => {
+      const maxChar = 13;
+
+      if (listTitle.innerText.length > maxChar) {
+        event.target.innerText = event.target.innerText.slice(0, maxChar);
+        alert(`There's only maximum of ${maxChar} characters for the title`);
+      }
     });
   }
 });
