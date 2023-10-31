@@ -106,12 +106,36 @@ mainContainer.addEventListener("click", (event) => {
         alert(`There's only maximum of ${maxChar} characters for the title`);
       }
     });
+
+    if (listTitle.isContentEditable) {
+    }
+
+    // toggles the delete icon whenever the user pressed list-settings
+    const listDelete = event.target
+      .closest(".list-container")
+      .querySelectorAll(".list-delete");
+
+    listDelete.forEach((list) => {
+      if (listTitle.isContentEditable) {
+        list.style.display = "block";
+      } else {
+        list.style.display = "none";
+      }
+    });
   }
 
   // put a check on the checkbox whenever its clicked
   if (target.classList.contains("checkBox")) {
     target.addEventListener("click", () => {
       target.classList.toggle("checked");
+    });
+  }
+
+  // deletes the todos
+  if (target.classList.contains("list-delete")) {
+    target.addEventListener("click", () => {
+      const todosContainer = target.parentElement.parentElement;
+      todosContainer.remove();
     });
   }
 });
