@@ -39,10 +39,13 @@ addList.addEventListener("click", () => {
   }
 });
 
-// event delegation for adding new todo lists
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("add-todoList")) {
-    const listContainer = event.target
+// event delegation for the new created list-containers
+mainContainer.addEventListener("click", (event) => {
+  const target = event.target;
+
+  // add todos to the list container
+  if (target.classList.contains("add-todoList")) {
+    const currentContainer = event.target
       .closest(".list-container")
       .querySelector(".list-main");
     const todoContainer = document.createElement("div");
@@ -63,7 +66,7 @@ document.addEventListener("click", (event) => {
     checkDelete.appendChild(checkBox);
     checkDelete.appendChild(deleteList);
     todoContainer.appendChild(checkDelete);
-    listContainer.appendChild(todoContainer);
+    currentContainer.appendChild(todoContainer);
 
     // function to limit the character of the list name
     list.addEventListener("input", (event) => {
@@ -75,11 +78,9 @@ document.addEventListener("click", (event) => {
       }
     });
   }
-});
 
-// event delegation for editing lists and title
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("list-settings")) {
+  // makes the list-container's title and todos editable
+  if (target.classList.contains("list-settings")) {
     const todoList = event.target
       .closest(".list-container")
       .querySelectorAll(".todos");
@@ -88,7 +89,7 @@ document.addEventListener("click", (event) => {
       .closest(".list-container")
       .querySelector(".title");
 
-    let isEditable = !listTitle.isEditable;
+    let isEditable = !listTitle.isContentEditable;
 
     listTitle.setAttribute("contenteditable", isEditable);
 
@@ -104,6 +105,13 @@ document.addEventListener("click", (event) => {
         event.target.innerText = event.target.innerText.slice(0, maxChar);
         alert(`There's only maximum of ${maxChar} characters for the title`);
       }
+    });
+  }
+
+  // put a check on the checkbox whenever its clicked
+  if (target.classList.contains("checkBox")) {
+    target.addEventListener("click", () => {
+      target.classList.toggle("checked");
     });
   }
 });
