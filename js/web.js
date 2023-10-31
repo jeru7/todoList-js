@@ -39,6 +39,20 @@ addList.addEventListener("click", () => {
   }
 });
 
+// function to delete list
+const deleteList = document.querySelector("#deleteList");
+
+deleteList.addEventListener("click", () => {
+  const listContainerAll = document.querySelectorAll(".list-container");
+
+  if (listContainerAll.length > 0) {
+    const lastList = listContainerAll[listContainerAll.length - 1];
+    lastList.remove();
+  } else {
+    alert("You have an empty list!");
+  }
+});
+
 // event delegation for the new created list-containers
 mainContainer.addEventListener("click", (event) => {
   const target = event.target;
@@ -77,6 +91,14 @@ mainContainer.addEventListener("click", (event) => {
         alert(`There's only maximum of ${maxChar} characters for the list`);
       }
     });
+
+    // exits the input field whenever the user press enter
+    list.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        list.blur();
+      }
+    });
   }
 
   // makes the list-container's title and todos editable
@@ -107,8 +129,13 @@ mainContainer.addEventListener("click", (event) => {
       }
     });
 
-    if (listTitle.isContentEditable) {
-    }
+    // exits the input field whenever the user press enter
+    listTitle.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        listTitle.blur();
+      }
+    });
 
     // toggles the delete icon whenever the user pressed list-settings
     const listDelete = event.target
