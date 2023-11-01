@@ -163,7 +163,7 @@ footer {
 }
 
 .list-main {
-  height: 100%;
+  height: 300px;
   overflow: auto;
 }
 
