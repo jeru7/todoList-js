@@ -6,6 +6,8 @@ A simple todo list with vanilla JS.
 
 ## Site
 
+Feel free to visit the live version of the todoList via github pages: [Visit site](https://jeru7.github.io/todoList-js/)
+
 ## Features
 
 ### Add List
