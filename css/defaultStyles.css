@@ -106,14 +106,15 @@ footer {
   grid-template-rows: repeat(2, 1fr);
   gap: 0.5rem;
   padding: 1rem;
-  height: 100vh;
+  min-height: 700px;
   width: 100%;
   margin: 0.375rem 0;
 }
 
 /* list container */
 .list-container {
-  height: 100%;
+  min-height: 300px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   border-radius: 12px;
@@ -227,6 +228,47 @@ footer {
 
 [contenteditable="true"] {
   border: 1px solid #81868d;
+  border-radius: 3px;
   background-color: #dfe0cf;
   padding: 2px;
+}
+
+[contenteditable="true"]:focus {
+  outline: none;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 1076px) {
+  .main-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .main-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-container .logo-container {
+    font-size: 1.5rem;
+    width: 140px;
+  }
+
+  .menu-button {
+    height: 40px;
+    width: 40px;
+  }
+
+  .main-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .list-container {
+    min-width: 100px;
+  }
 }
