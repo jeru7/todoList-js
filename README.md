@@ -6,18 +6,14 @@ A simple to do list using vanilla CSS and JS.
 
 ## Features
 
-### Dark mode
+### Delete List
 
-### Clear List
-
-### Delete Selection
-
-### Pin a task
+### Add List
 
 ## Preview
 
-### Desktop
-
-### Mobile
-
 ## Tech Stack
+
+-HTML
+-CSS
+-VANILLA JS
