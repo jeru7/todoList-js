@@ -1,8 +1,8 @@
-# To Do List
+# ToDoList
 
 ## Description
 
-A simple to do list using vanilla CSS and JS.
+A simple todo list with vanilla JS.
 
 ## Site
 
