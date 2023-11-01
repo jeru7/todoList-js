@@ -2,7 +2,7 @@
 
 ## Description
 
-A simple todo list with vanilla JS.
+A simple todo list where you can edit, delete and add lists with vanilla JS.
 
 ## Site
 
